@@ -10,10 +10,15 @@ export default function(state = initialState, actions){
 
     switch (actions.type) {
           case FETCH_POSTS:
-          return {
-              ...state,
-              items: actions.payload
-          }
+            return {
+                ...state,
+                items: actions.payload
+            }
+          case NEW_POST:
+            return {
+                ...state,
+                item: actions.payload
+            }
 
 
         default:

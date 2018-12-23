@@ -1,4 +1,4 @@
-# Redyx App
+# Redux App
 
 ## installation
 
