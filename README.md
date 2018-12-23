@@ -1,6 +1,6 @@
 # Redyx App
 
-##instalation
+## installation
 
 ```
 npm install redux react-redux redux-thunk --save
