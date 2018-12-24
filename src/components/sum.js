@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { connect} from 'react-redux';
-import { IncrementData} from '../actions/postActions'
+import { IncrementData, DecrementData} from '../actions/postActions'
 
 
 class SumComponent extends Component {
@@ -24,7 +24,10 @@ class SumComponent extends Component {
     onDecrement(e){
         console.log(e.target)
         e.preventDefault();
-        return this.setState({sum: this.state.sum - 1})
+         // call from acction
+         this.props.DecrementData(this.props.sum);
+
+    //    return this.setState({sum: this.state.sum - 1})
     }
 
 
@@ -47,4 +50,4 @@ const mapStateToProps =  state => ({
     sum: state.posts.sum
 })
 
-export default connect(mapStateToProps, {IncrementData} )(SumComponent);
+export default connect(mapStateToProps, {IncrementData, DecrementData} )(SumComponent);

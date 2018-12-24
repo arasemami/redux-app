@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, ADD_INCREMENT} from './type'
+import { FETCH_POSTS, NEW_POST, ADD_INCREMENT , ADD_DECREMENT} from './type'
 
 export const fetchPosts = () => dispatch => {
     
@@ -40,4 +40,16 @@ export const IncrementData = (sum) => dispatch => {
         payload:   sum + 1
     }) 
 
+}
+
+
+
+export const DecrementData = (sum) => dispatch => {
+    console.log("Decrement");
+if(sum > 0)
+    return dispatch({
+        type: ADD_DECREMENT,
+        payload: sum - 1
+    })
+ 
 }

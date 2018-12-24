@@ -1,4 +1,4 @@
-import {FETCH_POSTS, NEW_POST, ADD_INCREMENT} from '../actions/type';
+import {FETCH_POSTS, NEW_POST, ADD_INCREMENT, ADD_DECREMENT} from '../actions/type';
 
 const initialState = {
     items:[],
@@ -21,6 +21,11 @@ export default function(state = initialState, actions){
                 item: actions.payload
             }
             case ADD_INCREMENT:
+            return {
+                ...state,
+                sum: actions.payload
+            }
+            case ADD_DECREMENT:
             return {
                 ...state,
                 sum: actions.payload
