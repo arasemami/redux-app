@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, ADD_INCREMENT , ADD_DECREMENT} from './type'
+import { FETCH_POSTS, NEW_POST, ADD_INCREMENT , ADD_DECREMENT, ON_SELECT_VALUE} from './type'
 
 export const fetchPosts = () => dispatch => {
     
@@ -52,4 +52,23 @@ if(sum > 0)
         payload: sum - 1
     })
  
+}
+
+// export const SelectValue = (value) => dispatch => {
+//     console.log(value);
+
+//     return dispatch({
+//         type: ON_SELECT_VALUE,
+//         payload : value
+//     })
+// } 
+ 
+export const SelectValue = (value) => dispatch => {
+  console.log(value)
+
+ 
+    return dispatch({
+        type: ON_SELECT_VALUE,
+        payload : value
+    })
 }

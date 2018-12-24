@@ -10,6 +10,7 @@ class SumComponent extends Component {
         this.onIncrement = this.onIncrement.bind(this)
         this.onDecrement = this.onDecrement.bind(this)
         this.onChange = this.onChange.bind(this)
+        this.GetValu = this.GetValu.bind(this)
     }
     onChange(e){
         this.setState({[e.target.name]: e.target.value})
@@ -21,13 +22,17 @@ class SumComponent extends Component {
        this.props.IncrementData(this.props.sum);
     }
 
-    onDecrement(e){
-        console.log(e.target)
+    onDecrement(e){ 
         e.preventDefault();
          // call from acction
          this.props.DecrementData(this.props.sum);
 
     //    return this.setState({sum: this.state.sum - 1})
+    }
+
+    GetValu(e){
+        e.preventDefault();  
+        alert(this.props.sum)
     }
 
 
@@ -40,6 +45,8 @@ class SumComponent extends Component {
                     <button type="submit" onClick={this.onDecrement}>-</button>
                     <input  type="text" onChange={this.onChange} value={this.props.sum}/>
                     <button type="submit" onClick={this.onIncrement}>+</button>
+                    <button type="submit" onClick={this.GetValu}>GetValue</button>
+
                 </form>
             </div>
          );
