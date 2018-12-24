@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST} from './type'
+import { FETCH_POSTS, NEW_POST, ADD_INCREMENT} from './type'
 
 export const fetchPosts = () => dispatch => {
     
@@ -13,7 +13,7 @@ export const fetchPosts = () => dispatch => {
 
 
 export const createPost = () => postData => dispatch => {
-
+console.log(postData)
 
     fetch('https://jsonplaceholder.typicode.com/posts',{
         method:'POST',
@@ -27,5 +27,17 @@ export const createPost = () => postData => dispatch => {
         type:NEW_POST,
         payload:data
     }))
+
+}
+
+
+export const IncrementData = (sum) => dispatch => {
+
+   console.log(sum)
+
+   return  dispatch({
+        type:ADD_INCREMENT,
+        payload:   sum + 1
+    }) 
 
 }

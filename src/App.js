@@ -5,6 +5,7 @@ import store from './store';
 import './App.css';
 import Posts from './components/posts';
 import PostForm from './components/postForms';
+import SumComponent from './components/sum';
 
 
  
@@ -16,6 +17,8 @@ class App extends Component {
     return (
       <Provider store={store}>
           <div className="App">
+            <SumComponent />
+             <hr />
             <h1>WLCOME TO MY aPP</h1>
               <PostForm />
               <hr />
