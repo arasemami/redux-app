@@ -20,8 +20,7 @@ class App extends Component {
           <div className="App">
           
           <DropList name="dropOne" />
-          <DropList name="dropTwo" />
-       
+
 
           <hr />
             <SumComponent />
